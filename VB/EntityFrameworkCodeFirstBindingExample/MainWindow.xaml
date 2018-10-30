@@ -1,0 +1,54 @@
+<Window x:Class="EntityFrameworkCodeFirstBindingExample.MainWindow"
+        DataContext="{dxmvvm:ViewModelSource {x:Type local:MainViewModel}}" 
+        mc:Ignorable="d" Title="Scheduling Application" 
+        Height="600" 
+        Width="800" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:EntityFrameworkCodeFirstBindingExample" 
+    xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" 
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm">
+
+    <Grid>
+        <dxsch:SchedulerControl x:Name="scheduler" GroupType="Resource">
+            
+            <!--region #Behaviors-->
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:EventToCommand EventName="AppointmentsUpdated" Command="{Binding AppointmentsUpdatedCommand}" />
+                <dxmvvm:EventToCommand EventName="InitNewAppointment" Command="{Binding InitNewAppointmentCommand}" PassEventArgsToCommand="True" />
+            </dxmvvm:Interaction.Behaviors>
+            <!--endregion #Behaviors-->
+
+            <!--region #DataSource-->
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appointments}" ResourcesSource="{Binding Resources}">
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings Start="StartTime" 
+                                                   End="EndTime" 
+                                                   AllDay="AllDay" 
+                                                   Subject="Subject" 
+                                                   Id="ID" 
+                                                   Description="Description" 
+                                                   LabelId="Label" 
+                                                   Location="Location" 
+                                                   RecurrenceInfo="RecurrenceInfo" 
+                                                   Reminder="ReminderInfo" 
+                                                   ResourceId="CarId" 
+                                                   StatusId="Status" 
+                                                   Type="EventType" />
+                    </dxsch:DataSource.AppointmentMappings>
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Id="ID" 
+                                                Caption="Model" />
+                    </dxsch:DataSource.ResourceMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+            <dxsch:DayView ResourcesPerPage="3" />
+            <dxsch:MonthView/>
+            <!--endregion #DataSource-->
+        </dxsch:SchedulerControl>
+
+    </Grid>
+</Window>
