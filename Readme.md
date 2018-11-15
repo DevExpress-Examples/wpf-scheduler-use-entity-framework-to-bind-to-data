@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.vb))
+* [MainWindow.xaml.cs](./CS/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.vb))
+* [MySchedulerModel.cs](./CS/EntityFrameworkCodeFirstBindingExample/MySchedulerModel.cs) (VB: [MySchedulerModel.vb](./VB/EntityFrameworkCodeFirstBindingExample/MySchedulerModel.vb))
+* [MainViewModel.cs](./CS/EntityFrameworkCodeFirstBindingExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/EntityFrameworkCodeFirstBindingExample/ViewModel/MainViewModel.vb))
+<!-- default file list end -->
 # How to bind Scheduler to data using the Entity Framework Code First approach
 
 
