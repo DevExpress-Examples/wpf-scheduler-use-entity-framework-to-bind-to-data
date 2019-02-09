@@ -1,4 +1,4 @@
-﻿<Window x:Class="EntityFrameworkCodeFirstBindingExample.MainWindow"
+<Window x:Class="EntityFrameworkCodeFirstBindingExample.MainWindow"
         DataContext="{dxmvvm:ViewModelSource {x:Type local:MainViewModel}}" 
         mc:Ignorable="d" Title="Scheduling Application" 
         Height="600" 
