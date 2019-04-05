@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [MainWindow.xaml](./CS/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/EntityFrameworkCodeFirstBindingExample/MainWindow.xaml.vb))
 * [MySchedulerModel.cs](./CS/EntityFrameworkCodeFirstBindingExample/MySchedulerModel.cs) (VB: [MySchedulerModel.vb](./VB/EntityFrameworkCodeFirstBindingExample/MySchedulerModel.vb))
 * [MainViewModel.cs](./CS/EntityFrameworkCodeFirstBindingExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/EntityFrameworkCodeFirstBindingExample/ViewModel/MainViewModel.vb))
