@@ -1,6 +1,0 @@
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\DXSample.vbprojAssemblyReference.cache
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\MainWindow.g.vb
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\Application.g.vb
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\GeneratedInternalTypeHelper.g.vb
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\DXSample_MarkupCompile.cache
-R:\Temp\8b2930b3-e08d-4702-b11a-b53efbd25bcc\tempTestingVB\DXSample\obj\Debug\DXSample_MarkupCompile.lref
