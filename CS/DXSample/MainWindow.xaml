@@ -1,0 +1,82 @@
+﻿<dx:ThemedWindow x:Class="DXSample.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                 xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                 xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                 xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                 xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+                 xmlns:local="clr-namespace:DXSample"
+                 Width="1200"
+                 Height="800"
+                 Title="Scheduling"
+                 WindowKind="Ribbon">
+
+    <Window.DataContext>
+        <local:SchedulingViewModel />
+    </Window.DataContext>
+
+    <DockPanel>
+        <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom">
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarStaticItem>
+                    <dxmvvm:Interaction.Behaviors>
+                        <local:BarStaticItemResetBehavior Value="{Binding Status}" />
+                    </dxmvvm:Interaction.Behaviors>
+                </dxb:BarStaticItem>
+            </dxr:RibbonStatusBarControl.RightItems>
+        </dxr:RibbonStatusBarControl>
+        <dxlc:LayoutControl Width="300"
+                            Margin="0 25 0 0"
+                            DockPanel.Dock="Right"
+                            dx:ScrollBarExtensions.ScrollBarMode="TouchOverlap"
+                            Orientation="Vertical"
+                            Padding="0">
+            <dxe:DateNavigator VerticalAlignment="Top" 
+                               Height="600"
+                               dxlc:LayoutControl.AllowVerticalSizing="True"
+                               IsMultiSelect="True"
+                               ShowTodayButton="False"
+                               ShowWeekNumbers="False">
+                <dxe:DateNavigator.StyleSettings>
+                    <dxsch:SchedulerDateNavigatorStyleSettings Scheduler="{Binding ElementName=scheduler}" />
+                </dxe:DateNavigator.StyleSettings>
+            </dxe:DateNavigator>
+            <dxsch:ResourceTreeControl Scheduler="{Binding ElementName=scheduler}" />
+        </dxlc:LayoutControl>
+        <dxsch:SchedulerControl Name="scheduler"
+                                ActiveViewType="MonthView"
+                                CommandBarStyle="Ribbon"
+                                ShowDateNavigationPanel="True">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentAdded" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentEdited" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRemoved" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRestored" />
+            </dxmvvm:Interaction.Behaviors>
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appts}"
+                                  ResourcesSource="{Binding Calendars}">
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Caption="Description"
+                                                Id="Id" />
+                    </dxsch:DataSource.ResourceMappings>
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings Description="Description"
+                                                   End="End"
+                                                   Id="Id"
+                                                   LabelId="Label"
+                                                   RecurrenceInfo="RecurrenceInfo"
+                                                   ResourceId="ResourceId"
+                                                   Start="Start"
+                                                   Subject="Subject"
+                                                   Type="AppointmentType" />
+                    </dxsch:DataSource.AppointmentMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+        </dxsch:SchedulerControl>
+    </DockPanel>
+
+</dx:ThemedWindow>
