@@ -1,14 +1,13 @@
-﻿using System.Data.Entity;
-using System.Windows;
+﻿using DevExpress.Internal;
 using DXSample.Data;
+using System.Data.Entity;
+using System.Windows;
 
-namespace DXSample {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+namespace DXSample {    
     public partial class App : Application {
         protected override void OnStartup(StartupEventArgs e) {
-            Database.SetInitializer<SchedulingContext>(new SchedulingContextInitializer());            
+            DbEngineDetector.PatchConnectionStringsAndConfigureEntityFrameworkDefaultConnectionFactory();
+            Database.SetInitializer<SchedulingContext>(new SchedulingContextInitializer());
             base.OnStartup(e);
         }
     }

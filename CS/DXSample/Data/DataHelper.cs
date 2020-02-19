@@ -79,7 +79,7 @@ namespace DXSample.Data {
             var appt = new AppointmentEntity() {
                 AppointmentType = (int)AppointmentType.Normal,
                 Start = newStart,
-                End = newEnd,                 
+                End = newEnd,
                 Subject = "Family Dinner",
                 Label = 3,
                 ResourceId = 1
@@ -94,7 +94,7 @@ namespace DXSample.Data {
                 AppointmentType = (int)AppointmentType.Normal,
                 Start = newStart,
                 End = newEnd,
-                Subject = "Disneyland",                
+                Subject = "Disneyland",
                 ResourceId = 1,
                 Label = 1,
                 Description = "It better be the happiest place on earth - I could sure use a nice day with the kids.",
@@ -109,7 +109,7 @@ namespace DXSample.Data {
                 AppointmentType = (int)AppointmentType.Normal,
                 Start = newStart,
                 End = newEnd,
-                Subject = "R&R",                
+                Subject = "R&R",
                 ResourceId = 3,
                 Label = 3,
                 Description = "Nothing to do but relax and enjoy the day with family. Need to take my foot off the gas pedal and enjoy the day.",

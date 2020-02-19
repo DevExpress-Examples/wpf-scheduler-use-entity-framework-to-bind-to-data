@@ -2,7 +2,6 @@
 using System.Data.Entity;
 
 namespace DXSample.Data {
-
     public class SchedulingContext : DbContext {
         public DbSet<AppointmentEntity> Appointments { get; set; }
         public DbSet<ResourceEntity> Resources { get; set; }
@@ -46,7 +45,7 @@ namespace DXSample.Data {
             context.Appointments.Add(DataHelper.TrainingFrenchLesson());
             context.Appointments.Add(DataHelper.TrainingGermanLesson());
             context.Appointments.Add(DataHelper.TrainingTrainStaffOnNewRemoteControls());
-                       
+
             context.SaveChanges();
         }
     }

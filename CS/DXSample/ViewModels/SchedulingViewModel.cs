@@ -5,8 +5,8 @@ using System.Windows.Input;
 using DevExpress.Mvvm;
 using DXSample.Data;
 
-namespace DXSample {
-    public class SchedulingViewModel : ViewModelBase {        
+namespace DXSample.ViewModels {
+    public class SchedulingViewModel : ViewModelBase {
         SchedulingContext context;
         public ObservableCollection<AppointmentEntity> Appts { get { return context.Appointments.Local; } }
         public ObservableCollection<ResourceEntity> Calendars { get { return context.Resources.Local; } }
@@ -14,7 +14,7 @@ namespace DXSample {
             get { return GetValue<string>(); }
             set { SetValue(value); }
 
-        }               
+        }
         public SchedulingViewModel() {
             context = new SchedulingContext();
             context.Appointments.Load();
