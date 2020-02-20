@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="DXSample.Views.SchedulingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+             xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+             xmlns:ViewModels="clr-namespace:DXSample.ViewModels"
+             xmlns:local="clr-namespace:DXSample.Behaviors">
+
+    <UserControl.DataContext>
+        <ViewModels:SchedulingViewModel />
+    </UserControl.DataContext>
+
+    <DockPanel>
+
+        <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom">
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarStaticItem>
+                    <dxmvvm:Interaction.Behaviors>
+                        <local:BarStaticItemResetBehavior Value="{Binding Status}" />
+                    </dxmvvm:Interaction.Behaviors>
+                </dxb:BarStaticItem>
+            </dxr:RibbonStatusBarControl.RightItems>
+        </dxr:RibbonStatusBarControl>
+
+        <dxsch:SchedulerControl Name="scheduler"
+                                CommandBarStyle="Ribbon"
+                                ActiveViewType="MonthView"                                
+                                ShowDateNavigationPanel="True">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentAdded" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentEdited" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRemoved" />
+                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRestored" />
+            </dxmvvm:Interaction.Behaviors>
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentsSource="{Binding Appts}"
+                                  ResourcesSource="{Binding Calendars}">
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Caption="Description"
+                                                Id="Id" />
+                    </dxsch:DataSource.ResourceMappings>
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings Description="Description"
+                                                   End="End"
+                                                   Id="Id"
+                                                   LabelId="Label"
+                                                   RecurrenceInfo="RecurrenceInfo"
+                                                   ResourceId="ResourceId"
+                                                   Start="Start"
+                                                   Subject="Subject"
+                                                   Type="AppointmentType" />
+                    </dxsch:DataSource.AppointmentMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+        </dxsch:SchedulerControl>
+    </DockPanel>
+
+</UserControl>

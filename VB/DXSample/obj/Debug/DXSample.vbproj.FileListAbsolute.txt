@@ -1,0 +1,7 @@
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\DXSample.vbprojAssemblyReference.cache
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\MainWindow.g.vb
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\Views\SchedulingView.g.vb
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\Application.g.vb
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\GeneratedInternalTypeHelper.g.vb
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\DXSample_MarkupCompile.cache
+R:\Temp\b9d9dc15-b085-42ce-af2d-f6bbfc09374a\tempTestingVB\DXSample\obj\Debug\DXSample_MarkupCompile.lref
