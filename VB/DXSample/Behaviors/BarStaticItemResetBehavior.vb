@@ -15,7 +15,7 @@ Namespace DXSample.Behaviors
 		Private timer As DispatcherTimer
 		Public Property Value() As String
 			Get
-				Return DirectCast(GetValue(ValueProperty), String)
+				Return CStr(GetValue(ValueProperty))
 			End Get
 			Set(ByVal value As String)
 				SetValue(ValueProperty, value)
@@ -37,7 +37,7 @@ Namespace DXSample.Behaviors
 			timer.Stop()
 			MyBase.OnDetaching()
 		End Sub
-		Private Shared Overloads Sub OnChanged(ByVal d As DependencyObject, ByVal e As DependencyPropertyChangedEventArgs)
+		Private Shared Sub OnChanged(ByVal d As DependencyObject, ByVal e As DependencyPropertyChangedEventArgs)
 'INSTANT VB NOTE: The variable barStaticItemResetBehavior was renamed since it may cause conflicts with calls to static members of the user-defined type with this name:
 			Dim barStaticItemResetBehavior_Conflict As BarStaticItemResetBehavior = (TryCast(d, BarStaticItemResetBehavior))
 			If barStaticItemResetBehavior_Conflict.IsAttached Then

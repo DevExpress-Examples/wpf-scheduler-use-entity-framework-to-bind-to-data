@@ -20,7 +20,7 @@ Namespace DXSample.Data
 
 			Dim patternDuration As TimeSpan = TimeSpan.FromHours(1.5)
 			Dim pattern As New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Pattern),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Pattern)),
 				.Start = patternStart,
 				.End = patternStart.Add(patternDuration),
 				.Subject = "Gym",
@@ -28,7 +28,7 @@ Namespace DXSample.Data
 				.ResourceId = 1
 			}
 
-			Dim info As RecurrenceInfo = DirectCast(RecurrenceBuilder.Weekly(patternStart).ByDay(WeekDays.Monday Or WeekDays.Wednesday Or WeekDays.Friday).Build(), RecurrenceInfo)
+			Dim info As RecurrenceInfo = CType(RecurrenceBuilder.Weekly(patternStart).ByDay(WeekDays.Monday Or WeekDays.Wednesday Or WeekDays.Friday).Build(), RecurrenceInfo)
 			pattern.RecurrenceInfo = info.ToXml()
 			Dim weekStartDate As DateTime = DateTimeHelper.GetStartOfWeekUI(Start.Date, DayOfWeek.Monday).Date
 			Dim changedStart As DateTime = weekStartDate.Add(patternTimeOfDay.Add(TimeSpan.FromHours(-1)))
@@ -38,7 +38,7 @@ Namespace DXSample.Data
 			End If
 
 			Dim changedOccurrence As New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.ChangedOccurrence),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.ChangedOccurrence)),
 				.Start = changedStart,
 				.End = changedStart.Add(patternDuration),
 				.Subject = "Gym",
@@ -51,7 +51,7 @@ Namespace DXSample.Data
 			Dim deletedStart As DateTime = weekStartDate.Add(patternTimeOfDay.Add(TimeSpan.FromDays(2)))
 
 			Dim deletedOccurrence As New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.DeletedOccurrence),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.DeletedOccurrence)),
 				.Start = deletedStart,
 				.End = deletedStart.Add(patternDuration),
 				.Subject = "Gym",
@@ -66,7 +66,7 @@ Namespace DXSample.Data
 'INSTANT VB NOTE: The variable start was renamed since Visual Basic does not handle local variables named the same as class members well:
 			Dim start_Conflict As DateTime = Start.AddDays(3).AddHours(19)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = start_Conflict,
 				.End = start_Conflict.AddHours(1),
 				.Subject = "Dentist",
@@ -81,7 +81,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict.AddMinutes(random.Next(0, 4) * 15)
 			Dim newEnd As DateTime = newStart.AddMinutes(random.Next(4, 8) * 20)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.Subject = "Family Dinner",
@@ -96,7 +96,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddDays(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.Subject = "Disneyland",
@@ -112,7 +112,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddDays(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.Subject = "R&R",
@@ -128,7 +128,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddDays(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 2,
@@ -143,7 +143,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddDays(5)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
@@ -158,7 +158,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
@@ -174,7 +174,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
@@ -190,7 +190,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(3)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
@@ -206,7 +206,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
@@ -221,7 +221,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1.5)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Pattern),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Pattern)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 2,
@@ -238,7 +238,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1.5)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Pattern),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Pattern)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 2,
@@ -255,7 +255,7 @@ Namespace DXSample.Data
 			Dim newStart As DateTime = start_Conflict
 			Dim newEnd As DateTime = newStart.AddHours(1).AddMinutes(50)
 			Dim appt = New AppointmentEntity() With {
-				.AppointmentType = CInt(AppointmentType.Normal),
+				.AppointmentType = CInt(Math.Truncate(AppointmentType.Normal)),
 				.Start = newStart,
 				.End = newEnd,
 				.ResourceId = 3,
