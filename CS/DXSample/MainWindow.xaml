@@ -36,11 +36,11 @@
                         <dxlc:LayoutControl Orientation="Vertical">
                             <dxe:DateNavigator dxlc:LayoutControl.AllowVerticalSizing="True">
                                 <dxe:DateNavigator.StyleSettings>
-                                    <dxsch:SchedulerDateNavigatorStyleSettings Scheduler="{Binding ElementName=view, Path=Scheduler}" />
+                                    <dxsch:SchedulerDateNavigatorStyleSettings Scheduler="{Binding ElementName=view, Path=ChildScheduler}" />
                                 </dxe:DateNavigator.StyleSettings>
                             </dxe:DateNavigator>
                             <dxsch:ResourceTreeControl Height="200"
-                                                       Scheduler="{Binding ElementName=view, Path=Scheduler}" />
+                                                       Scheduler="{Binding ElementName=view, Path=ChildScheduler}" />
                         </dxlc:LayoutControl>
                     </dxdo:LayoutPanel>
                 </dxdo:AutoHideGroup>

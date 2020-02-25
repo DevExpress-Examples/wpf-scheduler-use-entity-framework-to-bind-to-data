@@ -29,10 +29,10 @@
                                 ActiveViewType="MonthView"                                
                                 ShowDateNavigationPanel="True">
             <dxmvvm:Interaction.Behaviors>
-                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentAdded" />
-                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentEdited" />
-                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRemoved" />
-                <dxmvvm:EventToCommand Command="{Binding SaveCommand}" EventName="AppointmentRestored" />
+                <dxmvvm:EventToCommand EventName="AppointmentAdded" Command="{Binding SaveCommand}" />
+                <dxmvvm:EventToCommand EventName="AppointmentEdited" Command="{Binding SaveCommand}" />
+                <dxmvvm:EventToCommand EventName="AppointmentRemoved" Command="{Binding SaveCommand}" />
+                <dxmvvm:EventToCommand EventName="AppointmentRestored" Command="{Binding SaveCommand}" />
             </dxmvvm:Interaction.Behaviors>
             <dxsch:SchedulerControl.DataSource>
                 <dxsch:DataSource AppointmentsSource="{Binding Appts}"
