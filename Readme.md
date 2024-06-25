@@ -2,6 +2,7 @@
 ![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128655707/19.2.2%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T545436)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+[![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
 # WPF Scheduler - Use Entity Framework to Bind Scheduler to Data
@@ -26,3 +27,10 @@ This example uses the [Entity Framework Code First﻿](https://learn.microsoft.c
 * [WPF Scheduler - Load Data on Demand](https://github.com/DevExpress-Examples/wpf-scheduler-load-data-on-demand)
 * [WPF Scheduler - Create Regular and Recurring Appointments at the View Model Level](https://github.com/DevExpress-Examples/wpf-scheduler-create-regular-and-recurring-appointments-at-view-model-level)
 * [Scheduler for WPF - Create a Basic Scheduling Application](https://github.com/DevExpress-Examples/wpf-scheduler-create-basic-scheduling-application)
+<!-- feedback -->
+## Does this example address your development requirements/objectives?
+
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-use-entity-framework-to-bind-to-data&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-scheduler-use-entity-framework-to-bind-to-data&~~~was_helpful=no)
+
+(you will be redirected to DevExpress.com to submit your response)
+<!-- feedback end -->
